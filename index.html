@@ -310,6 +310,48 @@
   }
   @media (max-width:640px){ .skills-grid{grid-template-columns:1fr;} }
 
+  .cert-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:18px;
+  }
+  .cert-card{
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:24px;
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+    transition:transform 0.2s ease, border-color 0.2s ease;
+  }
+  .cert-card:hover{
+    transform:translateY(-3px);
+    border-color:var(--lime-dim);
+  }
+  .cert-icon{
+    flex:0 0 auto;
+    width:42px; height:42px;
+    border-radius:12px;
+    background:rgba(207,250,60,0.10);
+    color:var(--lime);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .cert-icon svg{width:20px; height:20px; fill:var(--lime);}
+  .cert-card h3{
+    font-family:'Poppins',sans-serif;
+    font-size:15.5px;
+    font-weight:600;
+    margin:0 0 6px;
+    color:#fff;
+  }
+  .cert-card p{
+    font-size:13.5px;
+    color:var(--text-soft);
+    margin:0;
+  }
+  @media (max-width:640px){ .cert-grid{grid-template-columns:1fr;} }
+
   .projects-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
@@ -494,6 +536,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#certificacoes">Certificações</a></li>
       <li><a href="#projetos">Projetos</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
@@ -562,6 +605,43 @@
   </div>
 </section>
 
+<section class="bordered reveal" id="certificacoes">
+  <div class="wrap">
+    <p class="eyebrow">Formação complementar</p>
+    <h2>Cursos e <span class="accent">certificações</span></h2>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5 4 8.5 9 11 5-2.5 9-6 9-11V5l-9-4Zm0 2.2 7 3.1v4.7c0 3.9-3.1 6.7-7 8.8-3.9-2.1-7-4.9-7-8.8V6.3l7-3.1Zm-1 5.3v6h2v-6h-2Zm0 7.5v2h2v-2h-2Z"/></svg></div>
+        <div>
+          <h3>Crie um site simples usando HTML, CSS e JavaScript</h3>
+          <p>Fundação Bradesco — Escola Virtual · 2 horas</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5 4 8.5 9 11 5-2.5 9-6 9-11V5l-9-4Zm0 2.2 7 3.1v4.7c0 3.9-3.1 6.7-7 8.8-3.9-2.1-7-4.9-7-8.8V6.3l7-3.1Zm-1 5.3v6h2v-6h-2Zm0 7.5v2h2v-2h-2Z"/></svg></div>
+        <div>
+          <h3>Administrando banco de dados</h3>
+          <p>Fundação Bradesco — Escola Virtual · 15 horas</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5 4 8.5 9 11 5-2.5 9-6 9-11V5l-9-4Zm0 2.2 7 3.1v4.7c0 3.9-3.1 6.7-7 8.8-3.9-2.1-7-4.9-7-8.8V6.3l7-3.1Zm-1 5.3v6h2v-6h-2Zm0 7.5v2h2v-2h-2Z"/></svg></div>
+        <div>
+          <h3>Linguagem de programação Python — básico</h3>
+          <p>Fundação Bradesco — Escola Virtual · 18 horas</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5 4 8.5 9 11 5-2.5 9-6 9-11V5l-9-4Zm0 2.2 7 3.1v4.7c0 3.9-3.1 6.7-7 8.8-3.9-2.1-7-4.9-7-8.8V6.3l7-3.1Zm-1 5.3v6h2v-6h-2Zm0 7.5v2h2v-2h-2Z"/></svg></div>
+        <div>
+          <h3>Fundamentos de TI: hardware e software</h3>
+          <p>Fundação Bradesco — Escola Virtual · 7 horas</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="bordered reveal" id="projetos">
   <div class="wrap">
     <p class="eyebrow">Projetos desenvolvidos</p>
@@ -584,23 +664,6 @@
           <span class="stack-tag">API Groq · Llama 3.3</span>
         </div>
         <a class="project-link" href="https://gerador-conteudo-ia.vercel.app" target="_blank" rel="noopener">Ver projeto →</a>
-      </div>
-      <div class="project-card">
-        <div class="project-mark">P</div>
-        <p class="project-tags">Front-end</p>
-        <h3>Portfólio pessoal</h3>
-        <p class="desc">Este portfólio, construído com foco em clareza, tipografia e experiência responsiva.</p>
-        <ul class="project-feats">
-          <li>Layout responsivo do celular ao desktop</li>
-          <li>Seções organizadas por trajetória e projetos</li>
-          <li>Animações leves de entrada e rolagem</li>
-        </ul>
-        <div class="stack-row">
-          <span class="stack-tag">HTML</span>
-          <span class="stack-tag">CSS</span>
-          <span class="stack-tag">JavaScript</span>
-        </div>
-        <a class="project-link" href="https://alyssongl656-alt.github.io/" target="_blank" rel="noopener">Ver projeto →</a>
       </div>
       <div class="project-card">
         <div class="project-mark">A</div>
